@@ -1,0 +1,32 @@
+<div class="announcement-bar" style="background-color: #f4f4f4; padding: 10px; text-align: center;">
+  <p>{{ block.settings.text }}</p>
+  {% if block.settings.button_url != blank %}
+    <a href="{{ block.settings.button_url }}" class="btn" style="color: blue;">{{ block.settings.button_text }}</a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Banner",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Banner Text",
+      "default": "Welcome to our store!"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    }
+  ]
+}
+{% endschema %}
