@@ -1,7 +1,40 @@
-<div class="announcement-bar" style="background-color: #f4f4f4; padding: 10px; text-align: center;">
-  <p>{{ block.settings.text }}</p>
+<div
+  class="announcement-bar"
+  style="
+    background-color: rgb(254, 147, 147);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  "
+>
+  <p
+    style="
+      text-transform: capitalize;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: large;
+      font-weight: bold;
+    "
+  >
+    {{ block.settings.text }}
+  </p>
   {% if block.settings.button_url != blank %}
-    <a href="{{ block.settings.button_url }}" class="btn" style="color: blue;">{{ block.settings.button_text }}</a>
+  <a
+    href="{{ block.settings.button_url }}"
+    class="btn"
+    style="
+      background-color: rgb(16, 141, 244);
+      color: black;
+      text-decoration: none;
+      font-size: large;
+      padding: 10px;
+      text-transform: uppercase;
+      border: 2px rgba(31, 31, 31, 0.737);
+      border-style: groove;
+    "
+    >{{ block.settings.button_text }}</a
+  >
   {% endif %}
 </div>
 
@@ -13,20 +46,21 @@
     {
       "type": "text",
       "id": "text",
-      "label": "Banner Text",
-      "default": "Welcome to our store!"
+      "label": "Announcement text",
+      "default": "Free Shipping on orders over $50!"
     },
     {
       "type": "text",
       "id": "button_text",
       "label": "Button Text",
-      "default": "Shop Now"
+      "default": "Click here",
     },
     {
       "type": "url",
       "id": "button_url",
-      "label": "Button Link"
-    }
+      "label": "Button Link",
+    },
+    
   ]
 }
 {% endschema %}
